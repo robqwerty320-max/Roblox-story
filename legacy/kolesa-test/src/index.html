@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<title>Колёса-конусы — тест</title>
+<style>
+  @font-face { font-family: 'Cap'; src: local('Rockwell Extra Bold'), url('/fonts/ROCKEB.TTF'); }
+  html, body { margin: 0; background: #000; overflow: hidden; }
+  #stage { position: relative; width: 1080px; height: 1920px; }
+  canvas { display: block; }
+  #cap { position: absolute; left: 0; right: 0; top: 1440px; height: 260px; pointer-events: none;
+         display: flex; align-items: center; justify-content: center; }
+  .word { position: absolute; font-family: 'Impact', sans-serif; font-size: 112px; color: #fff; letter-spacing: 1px;
+          -webkit-text-stroke: 14px #111; paint-order: stroke fill; white-space: nowrap;
+          text-shadow: 0 10px 0 rgba(0,0,0,.35); will-change: transform; }
+  .word.hot { color: #ffd23a; font-size: 132px; }
+  .word span { display: inline-block; }
+</style>
+<script type="importmap">{ "imports": { "three": "/node_modules/three/build/three.module.js" } }</script>
+</head>
+<body>
+<div id="stage"><div id="cap"></div></div>
+<script type="module" src="/src/scene.js"></script>
+</body>
+</html>

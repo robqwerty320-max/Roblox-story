@@ -1,0 +1,70 @@
+# Cloud render on GitHub's servers. Runs on every push that changes the animation code, or by hand:
+# Actions → "Render shorts" → Run workflow → pick the composition. The mp4 is committed back to `videos/`
+# and also attached to the run as an artifact.
+name: Render shorts
+
+on:
+  push:
+    branches: [main]
+    paths: ["src/**", "package.json", "package-lock.json", "remotion.config.ts", ".github/workflows/render.yml"]
+  workflow_dispatch:
+    inputs:
+      comp:
+        description: "Composition to render"
+        type: choice
+        options: [LieBigger, DadObby, all]
+        default: LieBigger
+
+permissions:
+  contents: write
+
+concurrency:
+  group: render
+  cancel-in-progress: false
+
+jobs:
+  render:
+    runs-on: ubuntu-latest
+    timeout-minutes: 150
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - name: Install
+        run: |
+          npm ci
+          npx remotion browser ensure
+
+      - name: Render
+        env:
+          COMP: ${{ github.event.inputs.comp || 'LieBigger' }}
+        run: |
+          mkdir -p videos
+          if [ "$COMP" = "all" ]; then LIST="LieBigger DadObby"; else LIST="$COMP"; fi
+          for c in $LIST; do
+            case $c in
+              LieBigger) name=what-if-lie-bigger ;;
+              DadObby) name=what-if-dad-obby ;;
+              *) name=$c ;;
+            esac
+            npx remotion render src/index.ts "$c" "videos/$name.mp4" --concurrency=4 --timeout=900000 --codec h264 --crf 18 --muted
+            ffprobe -v error -show_entries format=duration:stream=width,height,nb_frames -of compact "videos/$name.mp4" || true
+          done
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: videos
+          path: videos/*.mp4
+
+      - name: Commit videos
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -f videos/*.mp4
+          git commit -m "Render videos [skip ci]" || exit 0
+          git pull --rebase
+          git push

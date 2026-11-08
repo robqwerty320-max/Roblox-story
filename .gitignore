@@ -1,0 +1,8 @@
+node_modules/
+out/
+remotion-tmp/
+*.mp4
+*.wav
+*.log
+stills*/
+__pycache__/
