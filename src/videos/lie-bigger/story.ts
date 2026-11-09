@@ -1,6 +1,7 @@
 // "What If Every Lie Made You BIGGER?" — timeline: scenes + camera, size events, narration (captions), chips,
 // comic words. 30 fps, 1680 frames. Narration timing is a placeholder until the voice-over arrives.
 import { clamp, lerp, seg, easeInOut, easeOut, easeIn, expoOut, backOut, hash, vnoise } from "../its-just-orange/story";
+import VOICE from "./voice.json";
 export { clamp, lerp, seg, easeInOut, easeOut, easeIn, expoOut, backOut, hash, vnoise };
 
 export const FRAMES = 1680;
@@ -126,7 +127,8 @@ export const NARR: [number, number, string][] = [
   [1640, 1676, "...Uh-oh."],
 ];
 export type Word = { w: string; a: number; b: number; hot: boolean };
-export const WORDS: Word[] = NARR.flatMap(([a, b, text]) => {
+/** placeholder word timing (even split of each NARR line) — used only when voice.json has no words */
+const EVEN_WORDS: Word[] = NARR.flatMap(([a, b, text]) => {
   const ws = text.split(" ");
   const wt = ws.map((w) => 2 + w.replace(/[^A-Za-z]/g, "").length);
   const tot = wt.reduce((s, v) => s + v, 0);
@@ -139,6 +141,8 @@ export const WORDS: Word[] = NARR.flatMap(([a, b, text]) => {
     return { w, a: Math.round(s), b: Math.round(e), hot: bare.length > 1 && bare === bare.toUpperCase() };
   });
 });
+/** real word times from the Kokoro voice-over (stories/lie-bigger/audio/voice.py) */
+export const WORDS: Word[] = VOICE.words?.length ? (VOICE.words as Word[]) : EVEN_WORDS;
 export const wordAt = (f: number) => WORDS.find((w) => f >= w.a && f < w.b) ?? null;
 
 // ------------------------------------------------------------------------------------------------ comic words (screen space)

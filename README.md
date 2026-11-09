@@ -1,8 +1,8 @@
 # Roblox story shorts
 
 Vertical (1080x1920, 30 fps) "What If … Roblox?" story shorts: flat 2D vector look, blocky characters,
-one-word captions. Made with [Remotion](https://www.remotion.dev/) (React + SVG). Silent for now — the voice-over
-is added later.
+one-word captions. Made with [Remotion](https://www.remotion.dev/) (React + SVG). Sound: Kokoro voice-over +
+synthesized SFX, no music (`LieBigger`); `DadObby` is still silent.
 
 | Short | Composition | Code | Script | Video |
 |---|---|---|---|---|

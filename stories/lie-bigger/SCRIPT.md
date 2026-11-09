@@ -4,7 +4,11 @@
   and the living room from `src/videos/dad-obby/`).
 - Same flat story-short look as "What If DAD Tried to Beat Your Obby?": thick brown outline, blocky people, one-word
   captions (white / yellow punch words), comic sound-words, a chip at the top (here: the SIZE meter).
-- Sound: **none** (no music, no SFX). Voice-over later → retime `NARR` in `story.ts`.
+- Sound: Kokoro voice-over (`am_puck`, upbeat American, speed 1.12) + synthesized SFX; **no music, no musical
+  instruments**. `python stories/lie-bigger/audio/voice.py <kokoro_model_dir> out/lie` (voice.wav + real word times
+  → `src/videos/lie-bigger/voice.json`, captions follow it) → `python stories/lie-bigger/audio/sfx_mix.py out/lie`
+  (poof / stretch / pfft / bonk / roof crash / gasp / whoosh / room tone / breeze; voice as is, SFX −6 dB, ~−14 LUFS)
+  → copy `out/lie/mix.wav` to `public/lie-bigger/mix.wav` (the composition plays it).
 - Cast: **You** (kid), **Dad**, neighbour noobs. No Mom.
 
 ## Beats (frames @30 fps)

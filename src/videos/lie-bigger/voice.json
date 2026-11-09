@@ -1,0 +1,734 @@
+{
+ "voice": "am_puck",
+ "speed": 1.12,
+ "lines": [
+  {
+   "i": 0,
+   "text": "What if every lie... made you BIGGER?",
+   "t0": 0.26666666666666666,
+   "dur": 1.3457083333333333,
+   "speed": 1.12
+  },
+  {
+   "i": 1,
+   "text": "Dad asked:",
+   "t0": 5.266666666666667,
+   "dur": 0.662375,
+   "speed": 1.12
+  },
+  {
+   "i": 2,
+   "text": "Homework done?",
+   "t0": 6.8,
+   "dur": 0.7510416666666667,
+   "speed": 1.12
+  },
+  {
+   "i": 3,
+   "text": "You said: YES.",
+   "t0": 8.533333333333333,
+   "dur": 0.7739166666666667,
+   "speed": 1.12
+  },
+  {
+   "i": 4,
+   "text": "Who ate the last cookie?",
+   "t0": 11.5,
+   "dur": 1.0339166666666666,
+   "speed": 1.12
+  },
+  {
+   "i": 5,
+   "text": "THE DOG.",
+   "t0": 13.5,
+   "dur": 0.5655416666666667,
+   "speed": 1.12
+  },
+  {
+   "i": 6,
+   "text": "Your shirt got tight.",
+   "t0": 15.166666666666666,
+   "dur": 0.9128333333333334,
+   "speed": 1.12
+  },
+  {
+   "i": 7,
+   "text": "Are you getting... bigger?",
+   "t0": 17.066666666666666,
+   "dur": 0.9251666666666667,
+   "speed": 1.12
+  },
+  {
+   "i": 8,
+   "text": "NOPE.",
+   "t0": 19.2,
+   "dur": 0.48654166666666665,
+   "speed": 1.12
+  },
+  {
+   "i": 9,
+   "text": "Your head hit the CEILING.",
+   "t0": 20.666666666666668,
+   "dur": 1.0207916666666668,
+   "speed": 1.12
+  },
+  {
+   "i": 10,
+   "text": "Soon you didn't fit in the house.",
+   "t0": 23.333333333333332,
+   "dur": 1.264375,
+   "speed": 1.12
+  },
+  {
+   "i": 11,
+   "text": "I'm totally FINE!",
+   "t0": 26.066666666666666,
+   "dur": 0.9001666666666667,
+   "speed": 1.12
+  },
+  {
+   "i": 12,
+   "text": "The neighbors stared.",
+   "t0": 28.2,
+   "dur": 0.8652083333333334,
+   "speed": 1.12
+  },
+  {
+   "i": 13,
+   "text": "Dad yelled: Just tell the truth!",
+   "t0": 30.166666666666668,
+   "dur": 1.3464166666666666,
+   "speed": 1.12
+  },
+  {
+   "i": 14,
+   "text": "I ALWAYS tell the truth!",
+   "t0": 32.266666666666666,
+   "dur": 1.05875,
+   "speed": 1.12
+  },
+  {
+   "i": 15,
+   "text": "Now you were above the CLOUDS.",
+   "t0": 34.86666666666667,
+   "dur": 1.2324583333333334,
+   "speed": 1.12
+  },
+  {
+   "i": 16,
+   "text": "So you finally said it.",
+   "t0": 37.166666666666664,
+   "dur": 1.0271666666666666,
+   "speed": 1.12
+  },
+  {
+   "i": 17,
+   "text": "I ate the cookie.",
+   "t0": 39.6,
+   "dur": 0.8237916666666667,
+   "speed": 1.12
+  },
+  {
+   "i": 18,
+   "text": "No homework.",
+   "t0": 41.666666666666664,
+   "dur": 0.71225,
+   "speed": 1.12
+  },
+  {
+   "i": 19,
+   "text": "I'm sorry, Dad.",
+   "t0": 43.333333333333336,
+   "dur": 0.8661666666666666,
+   "speed": 1.12
+  },
+  {
+   "i": 20,
+   "text": "Dad smiled.",
+   "t0": 46.333333333333336,
+   "dur": 0.71975,
+   "speed": 1.12
+  },
+  {
+   "i": 21,
+   "text": "See? Honesty is EASY.",
+   "t0": 48.6,
+   "dur": 1.1035,
+   "speed": 1.12
+  },
+  {
+   "i": 22,
+   "text": "By the way... I LOVE your obby.",
+   "t0": 51.0,
+   "dur": 1.15275,
+   "speed": 1.12
+  },
+  {
+   "i": 23,
+   "text": "...Uh-oh.",
+   "t0": 54.666666666666664,
+   "dur": 0.526125,
+   "speed": 1.12
+  }
+ ],
+ "words": [
+  {
+   "w": "What",
+   "a": 8,
+   "b": 11,
+   "hot": false
+  },
+  {
+   "w": "if",
+   "a": 11,
+   "b": 14,
+   "hot": false
+  },
+  {
+   "w": "every",
+   "a": 14,
+   "b": 19,
+   "hot": false
+  },
+  {
+   "w": "lie...",
+   "a": 19,
+   "b": 27,
+   "hot": false
+  },
+  {
+   "w": "made",
+   "a": 27,
+   "b": 33,
+   "hot": false
+  },
+  {
+   "w": "you",
+   "a": 33,
+   "b": 36,
+   "hot": false
+  },
+  {
+   "w": "BIGGER?",
+   "a": 36,
+   "b": 51,
+   "hot": true
+  },
+  {
+   "w": "Dad",
+   "a": 158,
+   "b": 163,
+   "hot": false
+  },
+  {
+   "w": "asked:",
+   "a": 163,
+   "b": 181,
+   "hot": false
+  },
+  {
+   "w": "Homework",
+   "a": 204,
+   "b": 213,
+   "hot": false
+  },
+  {
+   "w": "done?",
+   "a": 213,
+   "b": 231,
+   "hot": false
+  },
+  {
+   "w": "You",
+   "a": 256,
+   "b": 260,
+   "hot": false
+  },
+  {
+   "w": "said:",
+   "a": 260,
+   "b": 264,
+   "hot": false
+  },
+  {
+   "w": "YES.",
+   "a": 264,
+   "b": 282,
+   "hot": true
+  },
+  {
+   "w": "Who",
+   "a": 345,
+   "b": 349,
+   "hot": false
+  },
+  {
+   "w": "ate",
+   "a": 349,
+   "b": 351,
+   "hot": false
+  },
+  {
+   "w": "the",
+   "a": 351,
+   "b": 354,
+   "hot": false
+  },
+  {
+   "w": "last",
+   "a": 354,
+   "b": 360,
+   "hot": false
+  },
+  {
+   "w": "cookie?",
+   "a": 360,
+   "b": 379,
+   "hot": false
+  },
+  {
+   "w": "THE",
+   "a": 405,
+   "b": 408,
+   "hot": true
+  },
+  {
+   "w": "DOG.",
+   "a": 408,
+   "b": 425,
+   "hot": true
+  },
+  {
+   "w": "Your",
+   "a": 455,
+   "b": 458,
+   "hot": false
+  },
+  {
+   "w": "shirt",
+   "a": 458,
+   "b": 464,
+   "hot": false
+  },
+  {
+   "w": "got",
+   "a": 464,
+   "b": 470,
+   "hot": false
+  },
+  {
+   "w": "tight.",
+   "a": 470,
+   "b": 488,
+   "hot": false
+  },
+  {
+   "w": "Are",
+   "a": 512,
+   "b": 514,
+   "hot": false
+  },
+  {
+   "w": "you",
+   "a": 514,
+   "b": 517,
+   "hot": false
+  },
+  {
+   "w": "getting...",
+   "a": 517,
+   "b": 522,
+   "hot": false
+  },
+  {
+   "w": "bigger?",
+   "a": 522,
+   "b": 541,
+   "hot": false
+  },
+  {
+   "w": "NOPE.",
+   "a": 576,
+   "b": 596,
+   "hot": true
+  },
+  {
+   "w": "Your",
+   "a": 620,
+   "b": 623,
+   "hot": false
+  },
+  {
+   "w": "head",
+   "a": 623,
+   "b": 627,
+   "hot": false
+  },
+  {
+   "w": "hit",
+   "a": 627,
+   "b": 631,
+   "hot": false
+  },
+  {
+   "w": "the",
+   "a": 631,
+   "b": 636,
+   "hot": false
+  },
+  {
+   "w": "CEILING.",
+   "a": 636,
+   "b": 652,
+   "hot": true
+  },
+  {
+   "w": "Soon",
+   "a": 700,
+   "b": 704,
+   "hot": false
+  },
+  {
+   "w": "you",
+   "a": 704,
+   "b": 709,
+   "hot": false
+  },
+  {
+   "w": "didn't",
+   "a": 709,
+   "b": 716,
+   "hot": false
+  },
+  {
+   "w": "fit",
+   "a": 716,
+   "b": 718,
+   "hot": false
+  },
+  {
+   "w": "in",
+   "a": 718,
+   "b": 722,
+   "hot": false
+  },
+  {
+   "w": "the",
+   "a": 722,
+   "b": 725,
+   "hot": false
+  },
+  {
+   "w": "house.",
+   "a": 725,
+   "b": 742,
+   "hot": false
+  },
+  {
+   "w": "I'm",
+   "a": 782,
+   "b": 787,
+   "hot": false
+  },
+  {
+   "w": "totally",
+   "a": 787,
+   "b": 792,
+   "hot": false
+  },
+  {
+   "w": "FINE!",
+   "a": 792,
+   "b": 812,
+   "hot": true
+  },
+  {
+   "w": "The",
+   "a": 846,
+   "b": 855,
+   "hot": false
+  },
+  {
+   "w": "neighbors",
+   "a": 855,
+   "b": 863,
+   "hot": false
+  },
+  {
+   "w": "stared.",
+   "a": 863,
+   "b": 882,
+   "hot": false
+  },
+  {
+   "w": "Dad",
+   "a": 905,
+   "b": 910,
+   "hot": false
+  },
+  {
+   "w": "yelled:",
+   "a": 910,
+   "b": 922,
+   "hot": false
+  },
+  {
+   "w": "Just",
+   "a": 922,
+   "b": 924,
+   "hot": false
+  },
+  {
+   "w": "tell",
+   "a": 924,
+   "b": 929,
+   "hot": false
+  },
+  {
+   "w": "the",
+   "a": 929,
+   "b": 932,
+   "hot": false
+  },
+  {
+   "w": "truth!",
+   "a": 932,
+   "b": 948,
+   "hot": false
+  },
+  {
+   "w": "I",
+   "a": 968,
+   "b": 971,
+   "hot": false
+  },
+  {
+   "w": "ALWAYS",
+   "a": 971,
+   "b": 976,
+   "hot": true
+  },
+  {
+   "w": "tell",
+   "a": 976,
+   "b": 982,
+   "hot": false
+  },
+  {
+   "w": "the",
+   "a": 982,
+   "b": 985,
+   "hot": false
+  },
+  {
+   "w": "truth!",
+   "a": 985,
+   "b": 1001,
+   "hot": false
+  },
+  {
+   "w": "Now",
+   "a": 1046,
+   "b": 1050,
+   "hot": false
+  },
+  {
+   "w": "you",
+   "a": 1050,
+   "b": 1054,
+   "hot": false
+  },
+  {
+   "w": "were",
+   "a": 1054,
+   "b": 1058,
+   "hot": false
+  },
+  {
+   "w": "above",
+   "a": 1058,
+   "b": 1062,
+   "hot": false
+  },
+  {
+   "w": "the",
+   "a": 1062,
+   "b": 1068,
+   "hot": false
+  },
+  {
+   "w": "CLOUDS.",
+   "a": 1068,
+   "b": 1085,
+   "hot": true
+  },
+  {
+   "w": "So",
+   "a": 1115,
+   "b": 1121,
+   "hot": false
+  },
+  {
+   "w": "you",
+   "a": 1121,
+   "b": 1127,
+   "hot": false
+  },
+  {
+   "w": "finally",
+   "a": 1127,
+   "b": 1133,
+   "hot": false
+  },
+  {
+   "w": "said",
+   "a": 1133,
+   "b": 1140,
+   "hot": false
+  },
+  {
+   "w": "it.",
+   "a": 1140,
+   "b": 1156,
+   "hot": false
+  },
+  {
+   "w": "I",
+   "a": 1188,
+   "b": 1192,
+   "hot": false
+  },
+  {
+   "w": "ate",
+   "a": 1192,
+   "b": 1194,
+   "hot": false
+  },
+  {
+   "w": "the",
+   "a": 1194,
+   "b": 1197,
+   "hot": false
+  },
+  {
+   "w": "cookie.",
+   "a": 1197,
+   "b": 1215,
+   "hot": false
+  },
+  {
+   "w": "No",
+   "a": 1250,
+   "b": 1255,
+   "hot": false
+  },
+  {
+   "w": "homework.",
+   "a": 1255,
+   "b": 1273,
+   "hot": false
+  },
+  {
+   "w": "I'm",
+   "a": 1300,
+   "b": 1305,
+   "hot": false
+  },
+  {
+   "w": "sorry,",
+   "a": 1305,
+   "b": 1311,
+   "hot": false
+  },
+  {
+   "w": "Dad.",
+   "a": 1311,
+   "b": 1329,
+   "hot": false
+  },
+  {
+   "w": "Dad",
+   "a": 1390,
+   "b": 1395,
+   "hot": false
+  },
+  {
+   "w": "smiled.",
+   "a": 1395,
+   "b": 1413,
+   "hot": false
+  },
+  {
+   "w": "See?",
+   "a": 1458,
+   "b": 1462,
+   "hot": false
+  },
+  {
+   "w": "Honesty",
+   "a": 1462,
+   "b": 1471,
+   "hot": false
+  },
+  {
+   "w": "is",
+   "a": 1471,
+   "b": 1477,
+   "hot": false
+  },
+  {
+   "w": "EASY.",
+   "a": 1477,
+   "b": 1494,
+   "hot": true
+  },
+  {
+   "w": "By",
+   "a": 1530,
+   "b": 1533,
+   "hot": false
+  },
+  {
+   "w": "the",
+   "a": 1533,
+   "b": 1536,
+   "hot": false
+  },
+  {
+   "w": "way...",
+   "a": 1536,
+   "b": 1541,
+   "hot": false
+  },
+  {
+   "w": "I",
+   "a": 1541,
+   "b": 1542,
+   "hot": false
+  },
+  {
+   "w": "LOVE",
+   "a": 1542,
+   "b": 1546,
+   "hot": true
+  },
+  {
+   "w": "your",
+   "a": 1546,
+   "b": 1551,
+   "hot": false
+  },
+  {
+   "w": "obby.",
+   "a": 1551,
+   "b": 1570,
+   "hot": false
+  },
+  {
+   "w": "...Uh-oh.",
+   "a": 1640,
+   "b": 1659,
+   "hot": false
+  }
+ ]
+}

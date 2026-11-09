@@ -51,7 +51,7 @@ jobs:
               DadObby) name=what-if-dad-obby ;;
               *) name=$c ;;
             esac
-            npx remotion render src/index.ts "$c" "videos/$name.mp4" --concurrency=4 --timeout=900000 --codec h264 --crf 18 --muted
+            npx remotion render src/index.ts "$c" "videos/$name.mp4" --concurrency=4 --timeout=900000 --codec h264 --crf 18
             ffprobe -v error -show_entries format=duration:stream=width,height,nb_frames -of compact "videos/$name.mp4" || true
           done
 

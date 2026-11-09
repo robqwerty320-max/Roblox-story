@@ -1,7 +1,7 @@
 // "What If Every Lie Made You BIGGER?" — ~56 s vertical 2D story short in the flat story-short look.
 // Script: stories/lie-bigger/SCRIPT.md. Timeline/camera/captions/sizes: story.ts. Poses: poses.ts. Silent.
 import React from "react";
-import { AbsoluteFill, useCurrentFrame } from "remotion";
+import { AbsoluteFill, Audio, staticFile, useCurrentFrame } from "remotion";
 import { loadFont } from "@remotion/google-fonts/LilitaOne";
 import { OL, Person, Pose, Kind } from "../dad-obby/chars";
 import { Room, Couch, Plant, GameSky, GameClouds } from "../dad-obby/world";
@@ -169,6 +169,8 @@ export const LieBigger: React.FC = () => {
 
   return (
     <AbsoluteFill style={{ backgroundColor: "#8fdcff" }}>
+      {/* Kokoro voice + synthesized SFX (no music): stories/lie-bigger/audio/ -> public/lie-bigger/mix.wav */}
+      <Audio src={staticFile("lie-bigger/mix.wav")} />
       <svg width={W} height={H} viewBox={`0 0 ${W} ${H}`} style={{ position: "absolute", inset: 0 }}>
         {world}
         <Comic f={f} />
