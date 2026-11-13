@@ -27,9 +27,49 @@ def narr():
 
 
 def speakable(t):
-    # ALL-CAPS punch words would be spelled out letter by letter: say them as normal words
-    t = re.sub(r"\b([A-Z]{2,})\b", lambda m: m.group(1).capitalize() if m.group(1) != "I" else m.group(1), t)
-    return t.replace("...", ",").replace("Uh-oh", "Uh oh")
+    """caption text -> what Kokoro should say. Kokoro takes its intonation from punctuation, so punch lines (any
+    ALL-CAPS word) end in "!" instead of "."; ALL-CAPS words are said as normal words (not spelled out).
+    Returns the parts between "..." — they are voiced separately and joined with a real dramatic pause."""
+    hot = re.search(r"\b[A-Z]{2,}\b", t) is not None
+    t = re.sub(r"\b([A-Z]{2,})\b", lambda m: m.group(1).capitalize(), t)
+    t = t.replace("Uh-oh.", "Uh oh!").replace("Uh-oh", "Uh oh!")
+    if hot and t.endswith("."):
+        t = t[:-1] + "!"
+    parts = [x.strip(" ,") for x in t.split("...") if x.strip(" ,.")]
+    # a short "See?" before a sentence gets swallowed: give it its own breath
+    out = []
+    for x in parts:
+        if x.startswith("See? "):
+            out += ["See?", x[5:]]
+        else:
+            out.append(x)
+    return out
+
+
+DRAMA = 0.22  # seconds of pause where the caption has "..."
+
+
+def polish(x, sr):
+    """broadcast-style voice chain: rumble cut, less mud, presence + air, gentle compression, normalize"""
+    sys.path.insert(0, os.path.join(HERE, "..", "..", "trust-me-bro", "audio"))
+    from dsp import hp, peq, shelf
+    y = hp(x, 75, 2)
+    y = peq(y, 250, -2.5, 1.0)
+    y = peq(y, 3200, 3.5, 0.9)
+    y = shelf(y, 9000, 2.5, "high")
+    # compressor: 3:1 above -20 dBFS, 4 ms attack / 90 ms release, then +4 dB makeup
+    env = np.zeros_like(y)
+    a_at, a_rel = np.exp(-1 / (0.004 * sr)), np.exp(-1 / (0.09 * sr))
+    e = 0.0
+    ay = np.abs(y)
+    for i in range(len(y)):
+        c = a_at if ay[i] > e else a_rel
+        e = c * e + (1 - c) * ay[i]
+        env[i] = e
+    lvl = 20 * np.log10(env + 1e-9)
+    gain_db = np.where(lvl > -20, (-20 - lvl) * (1 - 1 / 3), 0.0) + 4
+    y = y * 10 ** (gain_db / 20)
+    return (y * 0.89 / (np.max(np.abs(y)) + 1e-9)).astype(np.float32)
 
 
 def trim(a, sr, thr=0.012):
@@ -52,8 +92,11 @@ def main():
         slot = ((lines[i + 1][0] if i + 1 < len(lines) else FRAMES) - a) / FPS - 0.12
         speed = SPEED
         while True:
-            audio, sr = k.create(speakable(text), voice=voice, speed=speed, lang="en-us")
-            audio = trim(audio.astype(np.float32), sr)
+            chunks = []
+            for part in speakable(text):
+                a_, sr = k.create(part, voice=voice, speed=speed, lang="en-us")
+                chunks += [trim(a_.astype(np.float32), sr), np.zeros(int(DRAMA * sr), np.float32)]
+            audio = np.concatenate(chunks[:-1])
             dur = len(audio) / sr
             if dur <= slot or speed >= 1.45:
                 break
@@ -65,7 +108,10 @@ def main():
         placed.append({"i": i, "text": text, "t0": t0, "dur": len(audio) / SR, "speed": round(speed, 3)})
         print(f"{i:2d} f{a:5d} {len(audio)/SR:4.2f}s / slot {slot:4.2f}s  x{speed:.2f}  {text}", flush=True)
     total = total[: int(FRAMES / FPS * SR)]
-    total *= 0.89 / (np.max(np.abs(total)) + 1e-9)
+    if os.environ.get("RAW_VOICE"):
+        total *= 0.89 / (np.max(np.abs(total)) + 1e-9)
+    else:
+        total = polish(total, SR)
     sf.write(os.path.join(out, "voice.wav"), total, SR, subtype="PCM_16")
 
     # word timings with faster-whisper (per line, so a word can never drift into another line)

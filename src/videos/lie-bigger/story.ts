@@ -124,7 +124,7 @@ export const NARR: [number, number, string][] = [
   [1390, 1450, "Dad smiled."],
   [1458, 1525, "See? Honesty is EASY."],
   [1530, 1600, "By the way... I LOVE your obby."],
-  [1640, 1676, "...Uh-oh."],
+  [1640, 1676, "...Oh no."],
 ];
 export type Word = { w: string; a: number; b: number; hot: boolean };
 /** placeholder word timing (even split of each NARR line) — used only when voice.json has no words */
